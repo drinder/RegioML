@@ -9,6 +9,11 @@ from DescriptorCreator.reorder_atoms import get_atoms_in_order
 from DescriptorCreator.find_atoms import find_identical_atoms, find_identical_atoms_with_scores
 from collections import defaultdict
 
+## dev 
+# from reorder_atoms import get_atoms_in_order
+# from find_atoms import find_identical_atoms, find_identical_atoms_with_scores
+# from collections import defaultdict
+
 # Drawing Options
 color_predicted = (0.2, 1, 0.0) # Green
 color_loseicted = (1.0, 0.1, 0.3) # Red
@@ -89,7 +94,8 @@ def generate_structure(ref_smi, smiles, names, atom_scores, highlight_predicted,
     mols = get_atoms_in_order(ref_mol, mols)
 
     if highlight_measure:
-        highlight_measure = [int(x) for x in highlight_measure.split(',')]
+        # highlight_measure = [int(x) for x in highlight_measure.split(',')]
+        highlight_measure = [int(x) for x in highlight_measure]
         highlight_measure = find_identical_atoms(ref_mol, highlight_measure)
     
     cwidth = 0
